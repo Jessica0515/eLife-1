@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "480427483125",
+    "firebase_url": "https://elife-31043-default-rtdb.asia-southeast1.firebasedatabase.app",
+    "project_id": "elife-31043",
+    "storage_bucket": "elife-31043.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:480427483125:android:ab74c933d9d736c3b00abc",
+        "android_client_info": {
+          "package_name": "com.example.elife"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "480427483125-35u6o3491cftlbmcebo11799b5e9fv8s.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyD5jZYcsAszzKu5Gln-xOri4-OHZXCHXeE"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "480427483125-35u6o3491cftlbmcebo11799b5e9fv8s.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="black">#FF000000</color>
+    <color name="white">#FFFFFFFF</color>
+    <color name="transparent">#00000000</color>
+<!--theme-->
+    <color name="themeDark1">#804233</color>
+    <color name="themeDark2">#C5956F</color>
+    <color name="themeDark3">#BD8F6B</color>
+    <color name="themeDark4">#e0c395</color>
+    <color name="themeDark5">#F9EBDA</color>
+    <color name="themeDark6">#FDEFEF</color>
+
+    <color name="themeWord1">#A8694F</color>
+    <color name="buttonNaviDefault">#FFF5D4</color>
+    <color name="inContext">#59472E</color>
+    <color name="inContextTitle">#FFECC4</color>
+
+    <color name="button_bottom_line">#FFFFE1</color>
+<!--sensor-->
+    <color name="warning">#EA5455</color>
+    <color name="warningWord">#FEE3EC</color>
+    <color name="safe">#CEE5D0</color>
+    <color name="safeWord">#00909E</color>
+    <color name="caution">#FFDE74</color>
+    <color name="cautionWord">#A18C48</color>
+    <color name="cold">#93D4E6</color>
+    <color name="coldWord">#00909E</color>
+
+
+
+    <!--    王宣荏color-->
+    <color name="wang_gray">#54351F</color>
+    <color name="wang_darker_gray">#54351F</color>
+    <color name="wang_light_gray">#777</color>
+    <color name="wang_cv_gray">#BEBEBE</color>
+    <color name="wang_cv_green">#28FF28</color>
+    <color name="wang_ann_normal">#DDDDDD</color>
+    <color name="wang_ann_act">#AFEEEE</color>
+    <color name="wang_ann_important">#FFC0CB</color>
+
+
+
+
+
+</resources>
