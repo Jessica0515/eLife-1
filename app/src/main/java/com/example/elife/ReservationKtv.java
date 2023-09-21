@@ -34,7 +34,6 @@ public class ReservationKtv extends AppCompatActivity {
 
         //下拉式選單
         ArrayList<String> arrayList = new ArrayList<>();
-        arrayList.add("日期");
         arrayList.add("星期一");
         arrayList.add("星期二");
         arrayList.add("星期三");
@@ -50,10 +49,17 @@ public class ReservationKtv extends AppCompatActivity {
 
         //下拉式選單
         spinner.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
+            Boolean firstTime =true;
             @Override
             public void onItemSelected(AdapterView<?> parent ,View view ,int position ,long id) {
                 String item = parent.getItemAtPosition(position).toString();
-                Toast.makeText(ReservationKtv.this,"Selected Date: "+item,Toast.LENGTH_LONG).show();
+
+                if (firstTime) {
+                    firstTime= false;
+                } else {
+                    Toast.makeText(ReservationKtv.this,"Selected Date: "+item,Toast.LENGTH_LONG).show();
+                }
+
             }
 
             @Override
@@ -64,10 +70,16 @@ public class ReservationKtv extends AppCompatActivity {
 
         //下拉式選單
         spinner1.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
+            Boolean firstTime =true;
             @Override
             public void onItemSelected(AdapterView<?> parent ,View view ,int position ,long id) {
                 String item = parent.getItemAtPosition(position).toString();
-                Toast.makeText(ReservationKtv.this,"Selected Time: "+item,Toast.LENGTH_LONG).show();
+                if (firstTime) {
+                    firstTime= false;
+                } else {
+                    Toast.makeText(ReservationKtv.this,"Selected Time: "+item,Toast.LENGTH_LONG).show();
+                }
+
             }
 
             @Override
@@ -76,7 +88,6 @@ public class ReservationKtv extends AppCompatActivity {
             }
         });
         ArrayList<String> arrayList1 = new ArrayList<>();
-        arrayList1.add("時間");
         arrayList1.add("10:00~11:00");
         arrayList1.add("11:00~12:00");
         arrayList1.add("13:00~14:00");
@@ -91,7 +102,6 @@ public class ReservationKtv extends AppCompatActivity {
         ArrayAdapter<String> adapterTime = new ArrayAdapter<>(this,android.R.layout.simple_spinner_item,arrayList1);
         adapterTime.setDropDownViewResource(android.R.layout.select_dialog_singlechoice);
         spinner1.setAdapter(adapterTime);
-
 
     }
 }
