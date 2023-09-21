@@ -5,7 +5,6 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.text.TextUtils;
 import android.view.View;
-import android.widget.Button;
 import android.widget.ProgressBar;
 import android.widget.Toast;
 
@@ -75,17 +74,14 @@ public class Login extends AppCompatActivity {
                             public void onComplete(@NonNull Task<AuthResult> task) {
                                 progressBar.setVisibility(View.GONE);
                                 if (task.isSuccessful()) {
-
                                     Toast.makeText(getApplicationContext(),"Login Successful.",
                                             Toast.LENGTH_SHORT).show();
                                     Intent intent =new Intent(getApplicationContext(),Menu.class);
                                     startActivity(intent);
                                     finish();
-
                                 } else {
                                     // If sign in fails, display a message to the user.
                                     progressBar.setVisibility(View.INVISIBLE);
-
                                     Toast.makeText(Login.this, "Authentication failed.",
                                             Toast.LENGTH_SHORT).show();
 

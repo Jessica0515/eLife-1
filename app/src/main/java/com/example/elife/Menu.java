@@ -288,7 +288,6 @@ public class Menu extends AppCompatActivity {
 
             }
         });
-
         //        Firebase
 
         auth = FirebaseAuth.getInstance();

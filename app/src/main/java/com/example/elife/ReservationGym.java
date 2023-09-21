@@ -33,53 +33,57 @@ public class ReservationGym extends AppCompatActivity {
 
 
         //下拉式選單
-        ArrayList<String> arrayList = new ArrayList<>();
-        arrayList.add("星期一");
-        arrayList.add("星期二");
-        arrayList.add("星期三");
-        arrayList.add("星期四");
-        arrayList.add("星期五");
-        arrayList.add("星期六");
-        arrayList.add("星期日");
+        //下拉式選單
 
-        ArrayAdapter<String> adapter = new ArrayAdapter<>(this, android.R.layout.simple_spinner_item, arrayList);
+        ArrayList<WeekDay> weekDays = new ArrayList<>();
+        weekDays.add(new WeekDay("星期一", 1));
+        weekDays.add(new WeekDay("星期二", 2));
+        weekDays.add(new WeekDay("星期三", 3));
+        weekDays.add(new WeekDay("星期四", 4));
+        weekDays.add(new WeekDay("星期五", 5));
+        weekDays.add(new WeekDay("星期六", 6));
+        weekDays.add(new WeekDay("星期日", 7));
+
+        ArrayAdapter<WeekDay> adapter = new ArrayAdapter<>(this, android.R.layout.simple_spinner_item, weekDays);
         adapter.setDropDownViewResource(android.R.layout.select_dialog_singlechoice);
         spinner.setAdapter(adapter);
 
-
-        //下拉式選單
         spinner.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
-            Boolean firstTime =true;
+            Boolean firstTime = true;
+
             @Override
-            public void onItemSelected(AdapterView<?> parent ,View view ,int position ,long id) {
-                String item = parent.getItemAtPosition(position).toString();
+            public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
+                WeekDay selectedWeekDay = (WeekDay) parent.getItemAtPosition(position);
 
                 if (firstTime) {
-                    firstTime= false;
+                    firstTime = false;
                 } else {
-                    Toast.makeText(ReservationGym.this,"Selected Date: "+item,Toast.LENGTH_LONG).show();
+                    Toast.makeText(ReservationGym.this, "Selected Date: " + selectedWeekDay.getName() , Toast.LENGTH_LONG).show();
+                    //回傳值
+//                    int selectedValue = selectedWeekDay.getValue();
+//                    Toast.makeText(ReservationBilliard.this, "Selected Date: "  + selectedValue , Toast.LENGTH_LONG).show();
                 }
-
             }
-
             @Override
             public void onNothingSelected(AdapterView<?> parent) {
 
             }
         });
+
 
         //下拉式選單
         spinner1.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
-            Boolean firstTime =true;
+            Boolean firstTime = true;
             @Override
             public void onItemSelected(AdapterView<?> parent ,View view ,int position ,long id) {
-                String item = parent.getItemAtPosition(position).toString();
+                TimeRange selectedTime = (TimeRange) parent.getItemAtPosition(position);
                 if (firstTime) {
-                    firstTime= false;
+                    firstTime = false;
                 } else {
-                    Toast.makeText(ReservationGym.this,"Selected Time: "+item,Toast.LENGTH_LONG).show();
+                    Toast.makeText(ReservationGym.this, "Selected Time: " + selectedTime.getRange() , Toast.LENGTH_LONG).show();
+//                    int selectedValue = selectedTime.getValue();
+//                    Toast.makeText(ReservationBilliard.this, "Selected Time: "  + selectedValue , Toast.LENGTH_LONG).show();
                 }
-
             }
 
             @Override
@@ -87,20 +91,21 @@ public class ReservationGym extends AppCompatActivity {
 
             }
         });
-        ArrayList<String> arrayList1 = new ArrayList<>();
-        arrayList1.add("10:00~11:00");
-        arrayList1.add("11:00~12:00");
-        arrayList1.add("13:00~14:00");
-        arrayList1.add("14:00~15:00");
-        arrayList1.add("15:00~16:00");
-        arrayList1.add("16:00~17:00");
-        arrayList1.add("17:00~18:00");
-        arrayList1.add("18:00~19:00");
-        arrayList1.add("19:00~20:00");
-        arrayList1.add("20:00~21:00");
-        arrayList1.add("21:00~22:00");
-        ArrayAdapter<String> adapterTime = new ArrayAdapter<>(this,android.R.layout.simple_spinner_item,arrayList1);
-        adapterTime.setDropDownViewResource(android.R.layout.select_dialog_singlechoice);
-        spinner1.setAdapter(adapterTime);
+        ArrayList<TimeRange> timeRanges = new ArrayList<>();
+        timeRanges.add(new TimeRange("10:00~11:00", 1));
+        timeRanges.add(new TimeRange("11:00~12:00", 2));
+        timeRanges.add(new TimeRange("13:00~14:00", 3));
+        timeRanges.add(new TimeRange("14:00~15:00", 4));
+        timeRanges.add(new TimeRange("15:00~16:00", 5));
+        timeRanges.add(new TimeRange("16:00~17:00", 6));
+        timeRanges.add(new TimeRange("17:00~18:00", 7));
+        timeRanges.add(new TimeRange("18:00~19:00", 8));
+        timeRanges.add(new TimeRange("19:00~20:00", 9));
+        timeRanges.add(new TimeRange("20:00~21:00", 10));
+        timeRanges.add(new TimeRange("21:00~22:00", 11));
+
+        ArrayAdapter<TimeRange> time = new ArrayAdapter<>(this, android.R.layout.simple_spinner_item, timeRanges);
+        time.setDropDownViewResource(android.R.layout.select_dialog_singlechoice);
+        spinner1.setAdapter(time);
     }
     }
